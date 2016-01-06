@@ -2,9 +2,9 @@
     'use strict';
 
     angular
-        .module('app.examples', [
-            // 'app.examples.authentication'
-            // 'app.examples.calendar',
+        .module('app.shopagram', [
+            'app.shopagram.authentication',
+            'app.shopagram.dashboard',
             // 'app.examples.charts',
             // 'app.examples.dashboards',
             // 'app.examples.elements',
