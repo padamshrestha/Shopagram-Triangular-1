@@ -1,0 +1,11 @@
+{
+    "MENU": {
+        "PROFILE": {
+            "PROFILE-MODULE": "Profile",
+            "PROFILE-PAGE": "Profile"
+        }
+    },
+    "PROFILE": {
+        "TITLE": "Profile"
+    }
+}

@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('app.shopagram.dashboard')
-        .controller('DashboardController', DashboardController);
+        .module('app.shopagram.shop')
+        .controller('ShopController', ShopController);
 
     /* @ngInject */
-    function DashboardController(AuthService) {
+    function ShopController(AuthService) {
         var vm = this;
         vm.testData = ['Connect', 'to', 'Instagram'];
         

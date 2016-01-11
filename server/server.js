@@ -4,11 +4,11 @@ var bodyParser  = require('body-parser');
 var cors        = require('cors');
 var morgan      = require('morgan');
 var mongoose    = require('mongoose');
-var passport	  = require('passport');
+var passport	= require('passport');
 var config      = require('./config/database'); // get db config file
 var User        = require('./app/models/user'); // get the mongoose model
-var port 	      = process.env.PORT || 8080;
-var jwt 			  = require('jwt-simple');
+var port 	    = process.env.PORT || 8080;
+var jwt 		= require('jwt-simple');
 
 // get our request parameters
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -31,6 +31,7 @@ app.get('/', function(req, res) {
 mongoose.connect(config.database);
 
 require('./config/passport')(passport);
+require('./app/routes/routes.js')(app, passport);
 
 var apiRoutes = express.Router();
 
@@ -110,4 +111,4 @@ app.use('/api', apiRoutes);
 
 // Start the server
 app.listen(port);
-console.log('There will be dragons: http://localhost:' + port);
+console.log('Shopagram Port: http://localhost:' + port);

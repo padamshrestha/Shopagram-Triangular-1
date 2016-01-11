@@ -8,6 +8,19 @@
           var LOCAL_TOKEN_KEY = 'yourTokenKey';
           var isAuthenticated = false;
           var authToken;
+          
+            
+         function connectInstagram() {
+            var deferred = $q.defer();
+
+            $http({ method: 'JSONP', url: '/auth/instagram' }).then(function(response) {
+               deferred.resolve(response);
+            },
+            function(err) {
+               console.log(err);
+            });
+            return deferred.promise;
+          };  
 
           function loadUserCredentials() {
             var token = window.localStorage.getItem(LOCAL_TOKEN_KEY);

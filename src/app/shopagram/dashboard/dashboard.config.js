@@ -21,7 +21,7 @@
         triMenuProvider.addMenu({
             name: 'MENU.DASHBOARD.DASHBOARD-MODULE',
             state: 'triangular.admin-default.dashboard',
-            icon: 'zmdi zmdi-account',
+            icon: 'zmdi zmdi-view-dashboard',
             type: 'link',
             priority: 1.1
             // children: [{
