@@ -2,8 +2,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
 
-// Thanks to http://blog.matoski.com/articles/jwt-express-node-mongoose/
-
 // set up a mongoose model
 var UserSchema = new Schema({
   name: {
@@ -14,7 +12,14 @@ var UserSchema = new Schema({
   password: {
         type: String,
         required: true
-    }
+    },
+  instagram: {
+        id                : String,
+        username          : String,
+        displayName       : String,
+        token             : String,
+        profile_picture   : String  
+  }
 });
 
 UserSchema.pre('save', function (next) {

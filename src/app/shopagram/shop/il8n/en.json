@@ -1,0 +1,11 @@
+{
+    "MENU": {
+        "SHOP": {
+            "SHOP-MODULE": "Shop",
+            "PROFILE-PAGE": "Shop"
+        }
+    },
+    "SHOP": {
+        "TITLE": "Shop"
+    }
+}

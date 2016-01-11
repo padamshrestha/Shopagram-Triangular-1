@@ -25,7 +25,7 @@
         </md-menu-content>
     </md-menu>
 
-    <md-button class="md-icon-button toolbar-button animated" ng-click="vm.toggleNotificationsTab(0)" aria-label="side navigation">
+    <!--<md-button class="md-icon-button toolbar-button animated" ng-click="vm.toggleNotificationsTab(0)" aria-label="side navigation">
         <md-icon md-font-icon="zmdi zmdi-email"></md-icon>
         <span class="toolbar-button-badge animated" theme-background="accent" ng-class="{ 'toolbar-button-badge-new' : vm.emailNew }">5</span>
     </md-button>
@@ -33,7 +33,7 @@
     <md-button class="md-icon-button toolbar-button" ng-click="vm.toggleNotificationsTab(1)">
         <md-icon md-font-icon="fa fa-bell-o"></md-icon>
         <span class="toolbar-button-badge" theme-background="accent">2</span>
-    </md-button>
+    </md-button>-->
 
     <md-menu>
         <md-button aria-label="Open user menu" ng-click="$mdOpenMenu()" aria-label="side navigation">
@@ -41,14 +41,14 @@
             Christos
         </md-button>
         <md-menu-content width="4">
-            <md-menu-item>
+            <!--<md-menu-item>
                 <md-button ng-click="vm.toggleNotificationsTab(2)" aria-label="side navigation">
                     <md-icon md-font-icon="zmdi zmdi-settings"></md-icon>
                     <span translate="ADMIN.TOOLBAR.SETTINGS"></span>
                 </md-button>
-            </md-menu-item>
+            </md-menu-item>-->
             <md-menu-item>
-                <md-button href="#/profile" aria-label="side navigation">
+                <md-button ui-sref="triangular.admin-default.shopProfile" aria-label="side navigation">
                     <md-icon md-font-icon="zmdi zmdi-account"></md-icon>
                     <span translate="ADMIN.TOOLBAR.PROFILE"></span>
                 </md-button>

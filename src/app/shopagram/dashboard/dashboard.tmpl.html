@@ -1,12 +1,27 @@
-<md-content class="padded-content-page">
-    <div layout="row" layout-align="center center">
-        <h2 class="md-display-3" translate>DASHBOARD.TITLE</h2>
-    </div>
-    <div class="margin-20" layout="row" layout-align="center center">
-        <ul class="seed-list">
-            <li class="md-headline" ng-repeat="test in vm.testData">
-                {{test}}
-            </li>
-        </ul>
-    </div>
-</md-content>
+<div class="padded-content-page">
+    <div layout="row" layout-xs="column">
+                <tri-widget layout-margin flex="50" flex-xs="100" palette-background="blue:800" title="Christos Varoufakis" subtitle="@christos - 11h" title-position="top" content-layout-align="start center" content-layout="column">
+                    <div linkify="twitter" class="font-weight-300 md-headline font-style-italic line-height-big margin-bottom-20 padding-normal" >
+                        Don't miss it! A Material Design Avatar set with 1440 avatars! http://sellfy.com/p/EUcC/ #avatars #materialdesign
+                    </div>
+                    
+                </tri-widget>
+                <div flex layout="column">
+                    <tri-widget layout-margin flex palette-background="blue:500" avatar="assets/images/avatars/avatar-2.png" title="Set your store name and greeting" subtitle="@christos - 12h" title-position="top">
+                        <div linkify="twitter" class="font-weight-300 md-title font-style-italic line-height-big padding-normal">
+                            Your store name and greeting is what will display on your shop page that visitors will see.
+                        </div>
+                    </tri-widget>
+                    <tri-widget layout-margin flex palette-background="light-blue:500" avatar="assets/images/avatars/avatar-6.png" title="Jane Smith" subtitle="@christos - 14h" title-position="top">
+                        <div linkify="twitter" class="font-weight-300 md-title font-style-italic line-height-big padding-normal">
+                            Don't miss our latest Angular Material Design Admin Template: http://goo.gl/0Yxm1U  #angularJS #material #webdesign
+                        </div>
+                    </tri-widget>
+                    <tri-widget layout-margin flex palette-background="triCyan:500" avatar="assets/images/avatars/avatar-5.png" title="Christos Varoufakis" subtitle="@christos - 16h" title-position="top">
+                        <div linkify="twitter" class="font-weight-300 md-title font-style-italic line-height-big padding-normal">
+                            New Freebie! Material Design Image fonts! In high res png's http://goo.gl/j1fWZz  #MaterialDesign #webdesign
+                        </div>
+                    </tri-widget>
+                </div>
+            </div>
+</div>

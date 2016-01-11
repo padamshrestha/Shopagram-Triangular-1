@@ -25484,6 +25484,7 @@ chart-legend ul {
     z-index: 3; }
 
 #admin-panel-content-view {
+  background-color: #e6e6e6;
   display: block;
   position: relative;
   padding-bottom: 65px;
@@ -26510,6 +26511,18 @@ md-select[md-container-class="calendar-color-select"] md-select-value span {
   animation-fill-mode: both;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
+
+.seed-list {
+  list-style: lower-greek; }
+
+.seed-list {
+  list-style: lower-greek; }
+
+.seed-list {
+  list-style: lower-greek; }
+
+.seed-list {
+  list-style: lower-greek; }
 
 .seed-list {
   list-style: lower-greek; }
