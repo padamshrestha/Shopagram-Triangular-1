@@ -26515,6 +26515,9 @@ md-select[md-container-class="calendar-color-select"] md-select-value span {
 .seed-list {
   list-style: lower-greek; }
 
+.no-border {
+  border-bottom: none !important; }
+
 .seed-list {
   list-style: lower-greek; }
 

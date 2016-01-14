@@ -1,13 +1,16 @@
-<md-content class="padded-content-page">
-    <div layout="row" layout-align="center center">
-        <h2 class="md-display-3" translate>POSTS.TITLE</h2>
+<div class="padded-content-page">
+    <div layout="row" layout-xs="column" layout-align="space-around center" layout-margin>
+        <tri-widget flex palette-background="white">
+            <img src="" />
+        </tri-widget>
+        <tri-widget flex palette-background="white">
+            <img src="" />
+        </tri-widget>
+        <tri-widget flex palette-background="white">
+            <img src="" />
+        </tri-widget>
+        <tri-widget flex palette-background="white">
+            <img src="" />
+        </tri-widget>
     </div>
-    <div class="margin-20" layout="row" layout-align="center center">
-        <ul class="seed-list">
-            <li class="md-headline" ng-repeat="test in vm.testData">
-                {{test}}
-            </li>
-        </ul>
-        <a target="_self" href="http://localhost:8080/connect/instagram"><md-button class="md-raised md-primary md-hue-1" aria-label="raised button">Connect</md-button></a>
-    </div>
-</md-content>
+</div>
