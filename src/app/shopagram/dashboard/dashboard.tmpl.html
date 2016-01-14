@@ -1,25 +1,33 @@
 <div class="padded-content-page">
     <div layout="row" layout-xs="column">
-                <tri-widget layout-margin flex="50" flex-xs="100" palette-background="blue:800" title="Christos Varoufakis" subtitle="@christos - 11h" title-position="top" content-layout-align="start center" content-layout="column">
+                <tri-widget layout-margin flex="50" flex-xs="100" palette-background="blue:800" title="Welcome to the Shopagram Dashboard!" title-position="top" content-layout-align="start center" content-layout="column">
                     <div linkify="twitter" class="font-weight-300 md-headline font-style-italic line-height-big margin-bottom-20 padding-normal" >
-                        Don't miss it! A Material Design Avatar set with 1440 avatars! http://sellfy.com/p/EUcC/ #avatars #materialdesign
+                        Here is the Shopagram description. An image will probably be added here as well. 
                     </div>
                     
                 </tri-widget>
                 <div flex layout="column">
-                    <tri-widget layout-margin flex palette-background="blue:500" avatar="assets/images/avatars/avatar-2.png" title="Set your store name and greeting" subtitle="@christos - 12h" title-position="top">
+                    <tri-widget layout-margin flex palette-background="blue:500" avatar="assets/images/avatars/avatar-2.png" title="Set your store name and greeting" title-position="top">
                         <div linkify="twitter" class="font-weight-300 md-title font-style-italic line-height-big padding-normal">
                             Your store name and greeting is what will display on your shop page that visitors will see.
                         </div>
                     </tri-widget>
-                    <tri-widget layout-margin flex palette-background="light-blue:500" avatar="assets/images/avatars/avatar-6.png" title="Jane Smith" subtitle="@christos - 14h" title-position="top">
-                        <div linkify="twitter" class="font-weight-300 md-title font-style-italic line-height-big padding-normal">
-                            Don't miss our latest Angular Material Design Admin Template: http://goo.gl/0Yxm1U  #angularJS #material #webdesign
+                    <tri-widget layout-margin flex palette-background="light-blue:500" avatar="assets/images/avatars/avatar-6.png" title="Connect To Instagram" title-position="top">
+                        <div layout="column" layout-xs="column">
+                            <div linkify="twitter" class="font-weight-300 md-title font-style-italic line-height-big padding-normal">
+                                Your first step is to connect to Instagram. <br/>This will allow you to start adding posts to your Shopagram page.
+                            </div>
+                            <div linkify="twitter" class="font-weight-300 md-title font-style-italic line-height-big padding-normal">
+                                <a target="_self" class="no-border" href="http://localhost:8080/connect/instagram"><md-button palette-background="white:100" class="md-raised md-primary" aria-label="raised button">Connect</md-button></a>
+                            </div>
                         </div>
                     </tri-widget>
-                    <tri-widget layout-margin flex palette-background="triCyan:500" avatar="assets/images/avatars/avatar-5.png" title="Christos Varoufakis" subtitle="@christos - 16h" title-position="top">
+                    <tri-widget layout-margin flex palette-background="triCyan:500" avatar="assets/images/avatars/avatar-5.png" title="Populate Your Feed" title-position="top">
                         <div linkify="twitter" class="font-weight-300 md-title font-style-italic line-height-big padding-normal">
-                            New Freebie! Material Design Image fonts! In high res png's http://goo.gl/j1fWZz  #MaterialDesign #webdesign
+                            Your feed is what your fans will see. Ideally, your feed will mimic your Instagram page in order for your fans to find their favorite content easily
+                        </div>
+                        <div linkify="twitter" class="font-weight-300 md-title font-style-italic line-height-big padding-normal">
+                            <md-button ng-click="vm.getProfile()" palette-background="white:100" class="md-raised md-primary" aria-label="raised button">Populate Feed</md-button>
                         </div>
                     </tri-widget>
                 </div>

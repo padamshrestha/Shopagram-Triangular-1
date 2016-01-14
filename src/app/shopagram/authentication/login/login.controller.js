@@ -36,7 +36,6 @@
 
         vm.login = function() {
           AuthService.login(vm.user).then(function(msg) {
-            console.log(msg);
             $state.go('triangular.admin-default.dashboard');
           }, function(errMsg) {
             console.log(errMsg);

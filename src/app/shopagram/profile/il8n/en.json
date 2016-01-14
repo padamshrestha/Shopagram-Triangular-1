@@ -6,6 +6,41 @@
         }
     },
     "PROFILE": {
-        "TITLE": "Profile"
+        "TITLE": "Profile",
+        "STORENAME": {
+            "LABEL": "store name",
+            "PLEASE_ENTER": "Please enter your store name"
+        },
+        "EMAIL": {
+            "LABEL": "email",
+            "PLEASE_ENTER": "Please enter your email address",
+            "PLEASE_VALID": "Please enter a valid email address"
+        },
+        "LOCATION": {
+            "LABEL": "location(s)"
+        },
+        "WEBSITE": {
+            "LABEL": "website"
+        },
+        "BIO": {
+            "LABEL": "bio"
+        },
+        "TWITTER": {
+            "LABEL": "twitter"
+        },
+        "FACEBOOK": {
+            "LABEL": "facebook"
+        },
+        "PASSWORD": {
+            "LABEL": "new password",
+            "CURRENT": "current",
+            "PLEASE_ENTER": "Please enter a password",
+            "MIN_LENGTH": "Your password must be greater than 8 characters long",
+            "SAME_PASSWORD": "You need to enter the same password"
+        },
+        "PASSWORD_CONFIRM": {
+            "LABEL": "confirm password"
+        },
+        "BUTTON": "Update Settings"
     }
 }

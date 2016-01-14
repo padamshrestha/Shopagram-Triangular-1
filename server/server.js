@@ -5,6 +5,8 @@ var cors        = require('cors');
 var morgan      = require('morgan');
 var mongoose    = require('mongoose');
 var passport	= require('passport');
+var path        = require('path');
+var session     = require('express-session');
 var config      = require('./config/database'); // get db config file
 var User        = require('./app/models/user'); // get the mongoose model
 var port 	    = process.env.PORT || 8080;
@@ -19,21 +21,76 @@ app.use(cors());
 
 // log to console
 app.use(morgan('dev'));
+// app.use(express.static(path.join(__dirname, '../src')));
 
-// Use the passport package in our application
+//Required For Passport
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false
+ }));
+ // Use the passport package in our application
 app.use(passport.initialize());
+app.use(passport.session());
 
 // demo Route (GET http://localhost:8080)
-app.get('/', function(req, res) {
-  res.send('Hello! The API is at http://localhost:' + port + '/api');
-});
+// app.get('/', function(req, res) {
+//   res.send('Hello! The API is at http://localhost:' + port + '/api');
+// });
 
 mongoose.connect(config.database);
 
-require('./config/passport')(passport);
-require('./app/routes/routes.js')(app, passport);
+function saveToken(req, res, next) {
+    var token = getToken(req.headers);
+    console.log("this is the token updated ", token);
+       if (token) {
+         var decoded = jwt.decode(token, config.secret);
+         app.set("jwt", decoded);
+         var jwtDecoded = app.get("jwt");
+         console.log("this is the decoded jwt ", jwtDecoded);
+       }
+       next();
+}
 
 var apiRoutes = express.Router();
+
+apiRoutes.get('/memberinfo', saveToken, passport.authenticate('jwt', {session: false}), function(req, res) {
+  var token = getToken(req.headers);
+  if (token) {
+    var decoded = jwt.decode(token, config.secret);
+    User.findOne({
+      name: decoded.name
+    }, function(err, user) {
+      if (err) throw err;
+
+      if (!user) {
+        return res.status(403).send({success: false, msg: 'Authentication failed. User not found.'});
+      } else {
+        return res.json({success: true, user });
+      }
+    });
+  } else {
+    return res.status(403).send({success: false, msg: 'No token provided.'});
+  }
+});
+
+getToken = function(headers) {
+  if (headers && headers.authorization) {
+    var parted = headers.authorization.split(' ');
+    if (parted.length === 2) {
+      return parted[1];
+    } else {
+      return null;
+    }
+  } else {
+    return null;
+  }
+};
+
+
+require('./config/passport')(app, passport);
+require('./app/routes/routes.js')(app, passport, saveToken);
+ 
 
 apiRoutes.post('/signup', function(req, res) {
   if (!req.body.name || !req.body.password) {
@@ -74,38 +131,6 @@ apiRoutes.post('/authenticate', function(req, res) {
   });
 });
 
-apiRoutes.get('/memberinfo', passport.authenticate('jwt', {session: false}), function(req, res) {
-  var token = getToken(req.headers);
-  if (token) {
-    var decoded = jwt.decode(token, config.secret);
-    User.findOne({
-      name: decoded.name
-    }, function(err, user) {
-      if (err) throw err;
-
-      if (!user) {
-        return res.status(403).send({success: false, msg: 'Authentication failed. User not found.'});
-      } else {
-        return res.json({success: true, msg: 'Welcome in the member area ' + user.name + '!'});
-      }
-    });
-  } else {
-    return res.status(403).send({success: false, msg: 'No token provided.'});
-  }
-});
-
-getToken = function(headers) {
-  if (headers && headers.authorization) {
-    var parted = headers.authorization.split(' ');
-    if (parted.length === 2) {
-      return parted[1];
-    } else {
-      return null;
-    }
-  } else {
-    return null;
-  }
-};
 
 app.use('/api', apiRoutes);
 
