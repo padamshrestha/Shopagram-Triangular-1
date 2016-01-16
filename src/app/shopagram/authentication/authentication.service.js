@@ -21,13 +21,13 @@
             };
         };
 
-         function fetchInstagram(token) {
+         function fetchInstagram() {
             var deferred = $q.defer();
 
             getAuthedUser().then(function(authedUser) {
             $http({
                 method: 'JSONP',
-                url: 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + authedUser.instagram.token + '&callback=JSON_CALLBACK'
+                url: 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + authedUser.user.instagram.token + '&callback=JSON_CALLBACK'
             }).then(function(response) {
                 var parsedResponse = response.data.data;
                 var instaProfile = [];
@@ -35,7 +35,6 @@
                     instaProfile.push(formatProfileData(parsedResponse[i]));
                 }
                     deferred.resolve(instaProfile);
-                    console.log(instaProfile);
                 });
             });
             return deferred.promise;
@@ -53,6 +52,17 @@
             });
             return deferred.promise;
           };  
+          
+         function postNewProduct(product) {
+            return $http.post(API_ENDPOINT.url + '/products', product)
+            .then(function(response) {
+                console.log(response);
+                return "product added!";
+            }, function (error) {
+                console.log(error);
+                return error;
+            });
+        };
 
           function loadUserCredentials() {
             var token = window.localStorage.getItem(LOCAL_TOKEN_KEY);
@@ -117,7 +127,9 @@
             register: register,
             logout: logout,
             isAuthenticated: function() {return isAuthenticated;},
-            getAuthedUser: getAuthedUser
+            getAuthedUser: getAuthedUser,
+            fetchInstagram: fetchInstagram,
+            postNewProduct: postNewProduct
           };
         })
 
