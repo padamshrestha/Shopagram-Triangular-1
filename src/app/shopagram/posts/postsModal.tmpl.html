@@ -1,0 +1,29 @@
+<md-dialog aria-label="Add this image as a product"  ng-cloak>
+  <form>
+    <md-toolbar layout="row" layout-align="center center">
+      <div class="md-toolbar-tools">
+        <h2>Create A Product</h2>
+
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content center-all">
+        <h2>Add the URL of your product from your website below</h2>
+        <md-input-container class="md-block">
+            <label>Enter Your URL Here</label>
+            <input type="text" ng-model="url">
+        </md-input-container>
+        <img ng-src="{{imageURL}}">
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row" class="center-footer">
+      <span flex></span>
+      <md-button class="md-primary md-raised" ng-click="postNewProduct(); cancel()">
+       Save Product
+      </md-button>
+      <md-button class="md-warn md-raised" ng-click="cancel()" style="margin-right:20px;">
+        Cancel
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

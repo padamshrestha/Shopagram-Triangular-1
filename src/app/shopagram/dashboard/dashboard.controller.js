@@ -6,9 +6,8 @@
         .controller('DashboardController', DashboardController);
 
     /* @ngInject */
-    function DashboardController(AuthService, $state) {
+    function DashboardController($state, AuthService) {
         var vm = this;
-        vm.testData = ['Connect', 'to', 'Instagram'];
         
         AuthService.getAuthedUser().then(function(data) {
             vm.authedUser = data.user;
@@ -18,7 +17,6 @@
         vm.getProfile = function() {
             AuthService.fetchInstagram().then(function (dataFromService) {
                 vm.finalData = dataFromService;
-                console.log("this is final data ", vm.finalData);
                 $state.go('triangular.admin-default.posts');
             });
         };

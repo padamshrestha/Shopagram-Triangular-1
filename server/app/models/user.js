@@ -19,6 +19,10 @@ var UserSchema = new Schema({
         displayName       : String,
         token             : String,
         profile_picture   : String  
+  },
+  products: {
+        product           : String,
+        url               : String
   }
 });
 

@@ -15,7 +15,12 @@
             templateUrl: 'app/shopagram/posts/posts.tmpl.html',
             // set the controller to load for this page
             controller: 'PostsController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                postsResolve: function(AuthService) {
+                    return AuthService.fetchInstagram();
+                 }
+            }
         });
 
         triMenuProvider.addMenu({
