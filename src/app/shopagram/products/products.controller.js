@@ -6,15 +6,20 @@
         .controller('ProductsController', ProductsController);
 
     /* @ngInject */
-    function ProductsController(AuthService) {
+    function ProductsController($scope, AuthService) {
         var vm = this;
-        vm.testData = ['Connect', 'to', 'Instagram'];
         
-        vm.connectInstagram = function() {
-            console.log("connecting to instagram");
-            AuthService.connectInstagram().then(function(data) {
-            console.log("Data", data);
+        AuthService.getAuthedUser().then(function(data) {
+            $scope.authedUser = data.user;
+            console.log("This is the authedUser ", $scope.authedUser);
         });
-       };
+        
+        $scope.getCreatedProducts = function() {
+            AuthService.getCreatedProducts().then(function(response) {
+                $scope.createdProducts = response;
+                console.log("These are the created Products", $scope.createdProducts);
+            });
+        };
+        $scope.getCreatedProducts();
     }
 })();

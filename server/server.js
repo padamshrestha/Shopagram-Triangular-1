@@ -90,6 +90,7 @@ getToken = function(headers) {
 
 require('./config/passport')(app, passport);
 require('./app/routes/routes.js')(app, passport, saveToken);
+require('./controllers/ProductsController.js')(app, saveToken);
  
 
 apiRoutes.post('/signup', function(req, res) {
@@ -134,14 +135,14 @@ apiRoutes.post('/authenticate', function(req, res) {
 //Routes ===============================================================
 
 app.use('/api', apiRoutes);
-var ProductsCtrl = require('./controllers/ProductsController.js');
+// var ProductsCtrl = require('./controllers/ProductsController.js');
 
-//Endpoints ============================================================
-app.post('/api/products/', ProductsCtrl.create);
-app.get('/api/products/getAuthedUsers', ProductsCtrl.getAuthedUsersProducts);
-app.get('/api/products/getProducts/:storename', ProductsCtrl.getProducts);
-app.get('/api/products/', ProductsCtrl.read);
-app.delete('/api/products/:id', ProductsCtrl.delete);
+// //Endpoints ============================================================
+// app.post('/api/products/', ProductsCtrl.create);
+// app.get('/api/products/getUserCreatedProducts/', ProductsCtrl.getUserCreatedProducts, app, saveToken);
+// app.get('/api/products/getProducts/:storename', ProductsCtrl.getProducts);
+// app.get('/api/products/', ProductsCtrl.read);
+// app.delete('/api/products/:id', ProductsCtrl.delete);
 
 // Start the server
 app.listen(port);

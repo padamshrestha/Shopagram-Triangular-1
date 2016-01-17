@@ -49,7 +49,7 @@
     function runAuth($rootScope, $state, AuthService, AUTH_EVENTS) {
       $rootScope.$on('$stateChangeStart', function (event, next, nextParams, fromState) {
         if (!AuthService.isAuthenticated()) {
-          console.log(next.name);
+          console.log("moving to", next.name);
           if (next.name !== 'authentication.login' && next.name !== 'authentication.signup' && next.name !== 'authentication.forgot' && next.name !== 'auth.forgot-password') {
             event.preventDefault();
             $state.go('authentication.login');
