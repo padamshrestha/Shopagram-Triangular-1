@@ -35,7 +35,7 @@
             
             var newProduct = {
                 user: $scope.authedUser,
-                picture: $scope.imageURL,
+                product: $scope.imageURL,
                 url: $scope.url
             };
             AuthService.postNewProduct(newProduct)

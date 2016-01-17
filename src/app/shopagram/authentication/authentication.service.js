@@ -63,6 +63,13 @@
                 return error;
             });
         };
+        
+        function getCreatedProducts() {
+            return $http.get(API_ENDPOINT.url + '/products/getUserCreatedProducts').then(function(response) {
+                return response.data;
+                console.log("What is this response", response.data);
+            });
+        };
 
           function loadUserCredentials() {
             var token = window.localStorage.getItem(LOCAL_TOKEN_KEY);
@@ -129,7 +136,8 @@
             isAuthenticated: function() {return isAuthenticated;},
             getAuthedUser: getAuthedUser,
             fetchInstagram: fetchInstagram,
-            postNewProduct: postNewProduct
+            postNewProduct: postNewProduct,
+            getCreatedProducts: getCreatedProducts
           };
         })
 

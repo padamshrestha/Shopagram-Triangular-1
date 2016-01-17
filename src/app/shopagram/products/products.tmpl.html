@@ -1,16 +1,7 @@
 <div class="padded-content-page">
-    <div layout="row" layout-xs="column" layout-align="space-around center" layout-margin>
-        <tri-widget flex palette-background="white">
-            <img src="" />
-        </tri-widget>
-        <tri-widget flex palette-background="white">
-            <img src="" />
-        </tri-widget>
-        <tri-widget flex palette-background="white">
-            <img src="" />
-        </tri-widget>
-        <tri-widget flex palette-background="white">
-            <img src="" />
+    <div layout="row" layout-xs="column" layout-sm="column" layout-align="center center" layout-margin layout-wrap>
+        <tri-widget flex-xs="100" flex-md="40" flex-lg="20" flex-xl="20" palette-background="white" ng-repeat="product in createdProducts">
+            <img ng-src="{{product.product}}" ng-click=""/>
         </tri-widget>
     </div>
 </div>
