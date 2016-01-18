@@ -70,6 +70,12 @@
                 console.log("What is this response", response.data);
             });
         };
+        
+        function removeProduct(id) {
+            return $http.delete(API_ENDPOINT.url + '/products/' + id).then(function(response) {
+                return response.data;
+            });
+       };
 
           function loadUserCredentials() {
             var token = window.localStorage.getItem(LOCAL_TOKEN_KEY);
@@ -137,7 +143,8 @@
             getAuthedUser: getAuthedUser,
             fetchInstagram: fetchInstagram,
             postNewProduct: postNewProduct,
-            getCreatedProducts: getCreatedProducts
+            getCreatedProducts: getCreatedProducts,
+            removeProduct: removeProduct
           };
         })
 

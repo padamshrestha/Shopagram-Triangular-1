@@ -26217,6 +26217,13 @@ md-select[md-container-class="calendar-color-select"] md-select-value span {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
+.md-select-form {
+  display: inline-block;
+  margin-top: 2px;
+  width: 100%; }
+  .md-select-form span {
+    width: 100%; }
+
 .extras-gallery-container {
   height: 100%; }
 
@@ -26332,13 +26339,6 @@ md-select[md-container-class="calendar-color-select"] md-select-value span {
       top: 0;
       -webkit-transform: rotate(90deg) translateX(0%) !important;
               transform: rotate(90deg) translateX(0%) !important; } }
-
-.md-select-form {
-  display: inline-block;
-  margin-top: 2px;
-  width: 100%; }
-  .md-select-form span {
-    width: 100%; }
 
 .github-user-dropdown img {
   width: 40px;
@@ -26515,17 +26515,20 @@ md-select[md-container-class="calendar-color-select"] md-select-value span {
 .seed-list {
   list-style: lower-greek; }
 
+.no-border {
+  border-bottom: none !important; }
+
+.seed-list {
+  list-style: lower-greek; }
+
 .center-all {
   text-align: center; }
 
 .center-footer {
   margin: 0 auto; }
 
-.seed-list {
-  list-style: lower-greek; }
-
-.no-border {
-  border-bottom: none !important; }
+.pointer {
+  cursor: pointer; }
 
 .seed-list {
   list-style: lower-greek; }

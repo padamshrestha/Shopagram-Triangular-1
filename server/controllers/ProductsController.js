@@ -36,13 +36,17 @@ module.exports = function(app, saveToken) {
   });
 
   app.delete('/api/products/:id', function(req, res) {
+    var jwtToken = app.get('jwt');
     Products.findByIdAndRemove(req.params.id, function(err, result) {
       if (err) {
         return res.status(500).send(err);
       } else {
-        Products.find({ user: req.user._id }, function(err, result) {
-          if (err) return res.status(500).send(err);
+        Products.find({ user: jwtToken._id }, function(err, result) {
+          if (err) {
+              return res.status(500).send(err);
+          } else {
           res.send(result);
+          }
         });
       }
     });
