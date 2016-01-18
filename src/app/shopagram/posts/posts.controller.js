@@ -45,8 +45,6 @@
             $scope.url = '';
         };
         
-        $scope.test = "this is a test";
-        
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
         
          $scope.showAdvanced = function(ev) {
