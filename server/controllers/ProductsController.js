@@ -13,13 +13,13 @@ module.exports = function(app, saveToken) {
 
   app.get('/api/products/getUserCreatedProducts/', function(req, res) {
       var jwtToken = app.get('jwt');
-      console.log("This is the jwtToken for Created Products ", jwtToken);
+    //   console.log("This is the jwtToken for Created Products ", jwtToken);
     Products.find({ user: jwtToken._id}, function(err, result) {
       if (err) { 
           return res.status(500).send(err);
       } else {
       res.send(result);
-      console.log("this is the result for products", result);
+    //   console.log("this is the result for products", result);
       }
     });
   });

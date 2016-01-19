@@ -20,9 +20,13 @@ var UserSchema = new Schema({
         token             : String,
         profile_picture   : String  
   },
-  products: {
-        product           : String,
-        url               : String
+  profile: {
+        storeName           : {type: String, unique: true},
+        locations           : String,
+        website             : String,
+        twitter             : String,
+        facebook            : String,
+        bio                 : String,
   }
 });
 

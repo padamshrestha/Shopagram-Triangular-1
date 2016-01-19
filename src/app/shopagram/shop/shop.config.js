@@ -10,8 +10,8 @@
         $translatePartialLoaderProvider.addPart('app/shopagram/shop');
 
         $stateProvider
-        .state('triangular.admin-default.shop', {
-            url: '/shop-settings',
+        .state('shop', {
+            url: '/shop/:id',
             templateUrl: 'app/shopagram/shop/shop.tmpl.html',
             // set the controller to load for this page
             controller: 'ShopController',
@@ -20,7 +20,7 @@
 
         triMenuProvider.addMenu({
             name: 'MENU.SHOP.SHOP-MODULE',
-            state: 'triangular.admin-default.shop',
+            state: 'shop',
             icon: 'zmdi zmdi-store',
             type: 'link',
             priority: 1.1

@@ -42,7 +42,7 @@ mongoose.connect(config.database);
 
 function saveToken(req, res, next) {
     var token = getToken(req.headers);
-    console.log("this is the token updated ", token);
+    // console.log("this is the token updated ", token);
        if (token) {
          var decoded = jwt.decode(token, config.secret);
          app.set("jwt", decoded);
@@ -91,6 +91,7 @@ getToken = function(headers) {
 require('./config/passport')(app, passport);
 require('./app/routes/routes.js')(app, passport, saveToken);
 require('./controllers/ProductsController.js')(app, saveToken);
+require('./controllers/ProfileController.js')(app, saveToken);
  
 
 apiRoutes.post('/signup', function(req, res) {

@@ -50,7 +50,7 @@
       $rootScope.$on('$stateChangeStart', function (event, next, nextParams, fromState) {
         if (!AuthService.isAuthenticated()) {
           console.log("moving to", next.name);
-          if (next.name !== 'authentication.login' && next.name !== 'authentication.signup' && next.name !== 'authentication.forgot' && next.name !== 'auth.forgot-password') {
+          if (next.name !== 'authentication.login' && next.name !== 'authentication.signup' && next.name !== 'authentication.forgot' && next.name !== 'auth.forgot-password' && next.name !== 'shop') {
             event.preventDefault();
             $state.go('authentication.login');
           }

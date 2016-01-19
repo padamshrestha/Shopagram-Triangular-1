@@ -18,10 +18,17 @@
         vm.isFullScreen = false;
         vm.fullScreenIcon = 'zmdi zmdi-fullscreen';
         vm.toggleFullScreen = toggleFullScreen;
+        vm.defaultImg = "../assets/images/avatars/avatar-5.png";
 
         // initToolbar();
 
         ////////////////
+        
+         AuthService.getAuthedUser().then(function(data) {
+            vm.authedUser = data.user;
+            vm.profileImg = vm.authedUser.instagram.profile_picture || vm.defaultImg;
+            console.log("This is the authedUser ", vm.authedUser);
+        });
 
         function openSideNav(navID) {
             $mdUtil.debounce(function(){
@@ -86,5 +93,7 @@
         $scope.$on('newMailNotification', function(){
             vm.emailNew = true;
         });
+        
+        // $rootScope.$on('profileChange', function(event, data) { vm.profileImg = vm.authedUser.instagram.profile_picture || vm.defaultImg });
     }
 })();
