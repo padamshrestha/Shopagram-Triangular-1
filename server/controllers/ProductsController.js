@@ -52,26 +52,31 @@ module.exports = function(app, saveToken) {
     });
   });
 
-  app.get('/api/products/getProducts/:storename', function(req, res) {
-    var userStore = {};
-    User.findOne({ 'settings.storeName': req.params.storename}, function(err, result) {
+  app.get('/api/products/getProducts/:shopname', function(req, res) {
+    var userShop = {};
+    User.findOne({ 'profile.storeName': req.params.storename}, function(err, result) {
       if (err) {
         return res.status(500).send(err);
       } else {
         var user = result;
-        console.log("getProducts user is : " + user);
-        userStore.storeName = user.settings.storeName;
-        userStore.greeting = user.settings.greetingMessage;
-        userStore.profile_products = user.instagram.profile_products;
+        // console.log("getProducts user is : " + user);
+        userShop.storeName = user.profile.storeName;
+        userShop.bio = user.profile.bio;
+        userShop.locations = user.profile.locations;
+        userShop.website = user.profile.website;
+        userShop.twitter = user.profile.twitter;
+        userShop.facebook = user.profile.facebook;
+        userShop.profile_products = user.instagram.profile_products;
         Products.find({ user: result._id }, function(err, result) {
           if (err) {
             return res.status(500).send(err);
           } else {
-            userStore.products = result;
-            res.send(userStore);
+            userShop.products = result;
+            res.send(userShop);
           }
         });
         }
     });
   });
+  
 };
