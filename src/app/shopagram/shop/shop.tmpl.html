@@ -1,13 +1,22 @@
-<md-content class="padded-content-page">
-    <div layout="row" layout-align="center center">
-        <h2 class="md-display-3" translate>SHOP.TITLE</h2>
+<md-toolbar class="toolbar-default margin-bottom-30">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-font-icon="zmdi zmdi-facebook"></md-icon>
+        </md-button>
+       
+    <div class="margin-right-20">
+        <img ng-src="{{vm.authedUser.instagram.profile_picture}}" alt="girl-avatar" class="img-round" width="100"/>
     </div>
-    <div class="margin-20" layout="row" layout-align="center center">
-        <ul class="seed-list">
-            <li class="md-headline" ng-repeat="test in vm.testData">
-                {{test}}
-            </li>
-        </ul>
-        <a target="_self" href="http://localhost:8080/connect/instagram"><md-button class="md-raised md-primary md-hue-1" aria-label="raised button">Connect</md-button></a>
+    <div class="text-light">
+        <h3 class="font-weight-600 margin-bottom-0 text-light text-uppercase">{{vm.authedUser.instagram.username}} / Profile</h3>
+        <p class="font-weight-300 margin-top-0">Edit your name, avatar etc</p>
+     </div>
+        <h2>
+          <span>Toolbar with Icon Buttons</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="More">
+            <md-icon md-font-icon="zmdi zmdi-more-vert"></md-icon>
+        </md-button>
     </div>
-</md-content>
+</md-toolbar>
