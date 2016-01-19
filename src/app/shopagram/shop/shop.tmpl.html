@@ -1,22 +1,25 @@
-<md-toolbar class="toolbar-default margin-bottom-30">
+<md-toolbar class="toolbar-default margin-bottom-30 md-whiteframe-5dp">
     <div class="md-toolbar-tools">
+    <div class="margin-right-20">
+        <img ng-src="{{vm.authedUser.instagram.profile_picture}}" alt="shop-avatar" class="img-round" width="100"/>
+    </div>
+        <h2>
+          <span>{{vm.authedUser.profile.storeName}}</span>
+        </h2>
+        <span flex></span>
         <md-button class="md-icon-button" aria-label="Settings">
             <md-icon md-font-icon="zmdi zmdi-facebook"></md-icon>
         </md-button>
-       
-    <div class="margin-right-20">
-        <img ng-src="{{vm.authedUser.instagram.profile_picture}}" alt="girl-avatar" class="img-round" width="100"/>
-    </div>
-    <div class="text-light">
-        <h3 class="font-weight-600 margin-bottom-0 text-light text-uppercase">{{vm.authedUser.instagram.username}} / Profile</h3>
-        <p class="font-weight-300 margin-top-0">Edit your name, avatar etc</p>
-     </div>
-        <h2>
-          <span>Toolbar with Icon Buttons</span>
-        </h2>
-        <span flex></span>
-        <md-button class="md-icon-button" aria-label="More">
-            <md-icon md-font-icon="zmdi zmdi-more-vert"></md-icon>
+        <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-font-icon="zmdi zmdi-twitter"></md-icon>
         </md-button>
     </div>
 </md-toolbar>
+
+<div class="padded-content-page">
+    <div layout="row" layout-xs="column" layout-sm="column" layout-align="center center" layout-margin layout-wrap>
+        <tri-widget flex-xs="100" flex-md="40" flex-lg="20" flex-xl="20" palette-background="white" ng-repeat="product in vm.shopProducts">
+            <img class="pointer" ng-src="{{product.product}}" ng-click="productModal($event); showProduct($index)"/>
+        </tri-widget>
+    </div>
+</div>

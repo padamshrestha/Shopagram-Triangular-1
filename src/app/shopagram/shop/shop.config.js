@@ -21,6 +21,9 @@
         triMenuProvider.addMenu({
             name: 'MENU.SHOP.SHOP-MODULE',
             state: 'shop',
+            // params: {
+            //     id: vm.authedUser.profile.storeName
+            // },
             icon: 'zmdi zmdi-store',
             type: 'link',
             priority: 1.1

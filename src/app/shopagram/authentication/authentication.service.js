@@ -67,7 +67,7 @@
         function getCreatedProducts() {
             return $http.get(API_ENDPOINT.url + '/products/getUserCreatedProducts').then(function(response) {
                 return response.data;
-                console.log("What is this response", response.data);
+                // console.log("What is this response", response.data);
             });
         };
         
@@ -85,6 +85,13 @@
                 console.log(error);
                 return error;
             });
+        };
+        
+        function getProductsForUser(shopname) {
+            return $http.get(API_ENDPOINT.url + '/products/getProducts/' + shopname).then(function(response) {
+            console.log("what is the response", response);
+            return response.data;
+          });
         };
 
           function loadUserCredentials() {
@@ -155,7 +162,8 @@
             postNewProduct: postNewProduct,
             getCreatedProducts: getCreatedProducts,
             removeProduct: removeProduct,
-            updateUserProfile: updateUserProfile
+            updateUserProfile: updateUserProfile,
+            getProductsForUser: getProductsForUser
           };
         })
 

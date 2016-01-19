@@ -48,10 +48,10 @@ module.exports = function(app, passport) {
   function passportCallback(req, accesstoken, refreshtoken, profile, done) {
       var jwtToken = app.get('jwt');
       
-      console.log("req is jwtToken", jwtToken);
-      console.log("token is", accesstoken);
-      console.log("refreshtoken is", refreshtoken);
-      console.log("profile is", profile);
+    //   console.log("req is jwtToken", jwtToken);
+    //   console.log("token is", accesstoken);
+    //   console.log("refreshtoken is", refreshtoken);
+    //   console.log("profile is", profile);
     //   asynchronous
     //    if (!req.user) {
               
