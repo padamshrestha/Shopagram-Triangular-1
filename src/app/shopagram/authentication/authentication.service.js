@@ -4,7 +4,7 @@
     angular
         .module('app.shopagram.authentication')
 
-        .service('AuthService', function($q, $http, API_ENDPOINT) {
+        .service('AuthService', function($rootScope, $q, $http, API_ENDPOINT) {
           var LOCAL_TOKEN_KEY = 'yourTokenKey';
           var isAuthenticated = false;
           var authToken;
@@ -76,6 +76,16 @@
                 return response.data;
             });
        };
+       
+       function updateUserProfile(profile) {
+            return $http.put(API_ENDPOINT.url + '/profile', profile).then(function(response) {
+                console.log(response);
+                return "settings added!";
+            }, function (error) {
+                console.log(error);
+                return error;
+            });
+        };
 
           function loadUserCredentials() {
             var token = window.localStorage.getItem(LOCAL_TOKEN_KEY);
@@ -144,7 +154,8 @@
             fetchInstagram: fetchInstagram,
             postNewProduct: postNewProduct,
             getCreatedProducts: getCreatedProducts,
-            removeProduct: removeProduct
+            removeProduct: removeProduct,
+            updateUserProfile: updateUserProfile
           };
         })
 
