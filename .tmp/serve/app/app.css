@@ -25737,6 +25737,38 @@ button, select, html, textarea, input {
 .seed-list {
   list-style: lower-greek; }
 
+#ui-login.ng-enter {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+#ui-login.ng-leave {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
 .calendar-page {
   padding: 0px 120px; }
   .calendar-page .triangular-calendar:focus, .calendar-page .fc-view-container:focus {
@@ -25829,38 +25861,6 @@ md-select[md-container-class="calendar-color-select"] md-select-value span {
 
 .calendar-color-select md-option {
   text-transform: capitalize; }
-
-#ui-login.ng-enter {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; }
-
-#ui-login.ng-leave {
-  -webkit-animation-name: fadeOut;
-  animation-name: fadeOut;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; }
 
 .google-example-chart {
   padding: 24px; }
@@ -26518,6 +26518,18 @@ md-select[md-container-class="calendar-color-select"] md-select-value span {
 .no-border {
   border-bottom: none !important; }
 
+.text-center {
+  text-align: center; }
+
+.font-white {
+  color: #fff !important; }
+
+.dash-title {
+  font-size: 20px !important; }
+
+.no-margin {
+  margin: 0px; }
+
 .seed-list {
   list-style: lower-greek; }
 
@@ -26533,11 +26545,14 @@ md-select[md-container-class="calendar-color-select"] md-select-value span {
 .seed-list {
   list-style: lower-greek; }
 
+.seed-list {
+  list-style: lower-greek; }
+
 text-uppercase {
   text-transform: uppercase; }
 
-.seed-list {
-  list-style: lower-greek; }
+.white-bg {
+  background-color: #fff !important; }
 
 .seed-list {
   list-style: lower-greek; }
@@ -26547,6 +26562,22 @@ text-uppercase {
   width: 50px;
   border-radius: 50%;
   vertical-align: middle; }
+
+.img-size {
+  height: 100%;
+  width: 100%; }
+
+.no-border {
+  border-bottom: none; }
+
+.hover-class:hover {
+  color: #E0E0E0;
+  text-decoration: none; }
+
+#shop-footer {
+  box-shadow: 0 -2px 6px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 0; }
 
 .login-frame md-card {
   max-width: 400px;

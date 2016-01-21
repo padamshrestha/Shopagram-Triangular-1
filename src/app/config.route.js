@@ -7,7 +7,7 @@
         .run(runAuth);
 
     /* @ngInject */
-    function routeConfig($stateProvider, $urlRouterProvider) {
+    function routeConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         // Setup the apps routes
 
         // 404 & 500 pages
@@ -44,6 +44,8 @@
 
         // always goto 404 if route not found
         $urlRouterProvider.otherwise('/404');
+        
+        // $locationProvider.html5Mode(true);
     }
 
     function runAuth($rootScope, $state, AuthService, AUTH_EVENTS) {

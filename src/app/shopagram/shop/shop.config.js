@@ -22,7 +22,7 @@
             name: 'MENU.SHOP.SHOP-MODULE',
             state: 'shop',
             // params: {
-            //     id: vm.authedUser.profile.storeName
+            //     id: $rootScope
             // },
             icon: 'zmdi zmdi-store',
             type: 'link',

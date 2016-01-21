@@ -21,7 +21,7 @@ app.use(cors());
 
 // log to console
 app.use(morgan('dev'));
-// app.use(express.static(path.join(__dirname, '../src')));
+// app.use(express.static(path.join(__dirname, '../src/index.html')));
 
 //Required For Passport
 app.use(session({
@@ -136,6 +136,10 @@ apiRoutes.post('/authenticate', function(req, res) {
 //Routes ===============================================================
 
 app.use('/api', apiRoutes);
+
+app.all('/*', function (req, res, next) {
+   res.sendFile('index.html', { root: __dirname + '../src' });
+});
 
 // Start the server
 app.listen(port);

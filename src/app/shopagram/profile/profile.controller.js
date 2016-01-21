@@ -33,6 +33,8 @@
             //     bio: vm.bio
             // };
             vm.profile.website = vm.sayLink(vm.profile.website);
+            vm.profile.facebook = vm.sayLink(vm.profile.facebook);
+            vm.profile.twitter = vm.sayLink(vm.profile.twitter);
             AuthService.updateUserProfile(vm.profile).then(function(data) {
                 console.log(data);
             });
