@@ -1,0 +1,11 @@
+{
+    "MENU": {
+        "POSTS": {
+            "POSTS-MODULE": "Manage",
+            "POSTS-PAGE": "Instagram Posts"
+        }
+    },
+    "POSTS": {
+        "TITLE": "Instagram Posts"
+    }
+}

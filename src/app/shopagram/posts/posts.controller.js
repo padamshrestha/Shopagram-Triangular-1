@@ -22,7 +22,7 @@
             $scope.imageURL = $scope.posts[index].image;
         };
         
-        vm.productAddedToast = productAddedToast;
+        $scope.productAddedToast = productAddedToast;
         
         function productAddedToast($event, position) {
             var $button = angular.element($event.currentTarget);
