@@ -47,7 +47,7 @@ function saveToken(req, res, next) {
          var decoded = jwt.decode(token, config.secret);
          app.set("jwt", decoded);
          var jwtDecoded = app.get("jwt");
-         console.log("this is the decoded jwt ", jwtDecoded);
+        //  console.log("this is the decoded jwt ", jwtDecoded);
        }
        next();
 }
