@@ -66,7 +66,7 @@ module.exports = function(app, saveToken) {
         userShop.website = user.profile.website;
         userShop.twitter = user.profile.twitter;
         userShop.facebook = user.profile.facebook;
-        userShop.profile_products = user.instagram.profile_products;
+        userShop.profile_picture = user.instagram.profile_picture;
         Products.find({ user: result._id }, function(err, result) {
           if (err) {
             return res.status(500).send(err);

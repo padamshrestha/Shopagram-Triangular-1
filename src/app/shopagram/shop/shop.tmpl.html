@@ -1,16 +1,16 @@
 <md-toolbar class="toolbar-default margin-bottom-30 md-whiteframe-5dp">
     <div class="md-toolbar-tools">
     <div class="margin-right-20">
-        <img ng-src="{{vm.authedUser.instagram.profile_picture}}" alt="shop-avatar" class="img-round" width="100"/>
+        <img ng-src="{{vm.shopInfo.profile_picture || vm.dummyImg}}" alt="shop-avatar" class="img-round" width="100"/>
     </div>
-        <a href="{{vm.authedUser.profile.website}}" target="_blank" class="hover-class"><h2>
-          <span>{{vm.authedUser.profile.storeName}}</span>
+        <a href="{{vm.shopInfo.website}}" target="_blank" class="hover-class"><h2>
+          <span>{{vm.shopInfo.storeName || vm.dummyStoreName}}</span>
         </h2></a>
         <span flex></span>
-        <a href="{{vm.authedUser.profile.facebook}}" target="_blank"><md-button class="md-icon-button" aria-label="Facebook">
+        <a href="{{vm.shopInfo.facebook || vm.dummyFacebook}}" target="_blank"><md-button class="md-icon-button" aria-label="Facebook">
             <md-icon md-font-icon="zmdi zmdi-facebook"></md-icon>
         </md-button></a>
-        <a href="{{vm.authedUser.profile.twitter}}" target="_blank"><md-button class="md-icon-button" aria-label="Twitter">
+        <a href="{{vm.shopInfo.twitter || vm.dummyTwitter}}" target="_blank"><md-button class="md-icon-button" aria-label="Twitter">
             <md-icon md-font-icon="zmdi zmdi-twitter"></md-icon>
         </md-button></a>
     </div>
@@ -18,10 +18,10 @@
 
 <div class="padded-content-page">
     <div layout="row" layout-align="center center">
-        <p flex="70"  flex-xs="90" class="md-headline font-weight-300 text-center">{{vm.authedUser.profile.bio}}</p>
+        <p flex="70"  flex-xs="90" class="md-headline font-weight-300 text-center">{{vm.shopInfo.bio || vm.dummyBio}}</p>
     </div>
     <div layout="row" layout-xs="column" layout-align="center center" layout-margin layout-wrap>
-        <tri-widget class="img-size" flex-xs="100" flex-sm="40" flex-md="40" flex-lg="20" flex-xl="20" palette-background="white" ng-repeat="product in vm.shopProducts">
+        <tri-widget class="img-size" flex-xs="100" flex-sm="40" flex-md="40" flex-lg="20" flex-xl="20" palette-background="white" ng-repeat="product in vm.shopProducts || vm.dummyProducts">
             <a class="no-border" href="{{product.url}}"><img class="pointer img-size" ng-src="{{product.product}}"/></a>
         </tri-widget>
     </div>

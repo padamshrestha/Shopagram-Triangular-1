@@ -1,0 +1,11 @@
+{
+    "MENU": {
+        "DASHBOARD": {
+            "DASHBOARD-MODULE": "Dashboard",
+            "DASHBOARD-PAGE": "Start Page"
+        }
+    },
+    "DASHBOARD": {
+        "TITLE": "Instagram Test Page"
+    }
+}
