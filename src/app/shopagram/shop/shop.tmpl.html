@@ -19,7 +19,7 @@
 <div class="padded-content-page">
     <div layout="row" layout-xs="column" layout-sm="column" layout-align="center center" layout-margin layout-wrap>
         <tri-widget flex-xs="100" flex-md="40" flex-lg="20" flex-xl="20" palette-background="white" ng-repeat="product in vm.shopProducts">
-            <img class="pointer" ng-src="{{product.product}}" ng-click="productModal($event); showProduct($index)"/>
+            <a class="post-image-link" href="{{product.url}}"><img class="pointer" ng-src="{{product.product}}"/>
         </tri-widget>
     </div>
 </div>

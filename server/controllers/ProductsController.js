@@ -54,12 +54,12 @@ module.exports = function(app, saveToken) {
 
   app.get('/api/products/getProducts/:shopname', function(req, res) {
     var userShop = {};
-    User.findOne({ 'profile.storeName': req.params.storename}, function(err, result) {
+    User.findOne({ 'profile.storeName': req.params.shopname}, function(err, result) {
       if (err) {
         return res.status(500).send(err);
       } else {
         var user = result;
-        // console.log("getProducts user is : " + user);
+        console.log("getProducts user is : " + user);
         userShop.storeName = user.profile.storeName;
         userShop.bio = user.profile.bio;
         userShop.locations = user.profile.locations;
