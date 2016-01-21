@@ -9,6 +9,25 @@
     vertical-align: middle;
 }
 
+.img-size {
+    height: 100%;
+    width: 100%;
+}
+
+.no-border {
+    border-bottom: none;
+}
+
+.hover-class:hover {
+    color: #E0E0E0;
+    text-decoration: none;
+}
 // .shop-color {
 //     background-color: #CFD8DC
 // }
+
+#shop-footer {
+  box-shadow: 0 -2px 6px 0 rgba(0, 0, 0, 0.10);
+  position: absolute;
+  bottom: 0;
+}

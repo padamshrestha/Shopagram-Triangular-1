@@ -1,7 +1,7 @@
 <div class="padded-content-page">
-    <div layout="row" layout-xs="column" layout-sm="column" layout-align="center center" layout-margin layout-wrap>
-        <tri-widget flex-xs="100" flex-md="40" flex-lg="20" flex-xl="20" palette-background="white" ng-repeat="product in createdProducts">
-            <img class="pointer" ng-src="{{product.product}}" ng-click="productModal($event); showProduct($index)"/>
+    <div layout="row" layout-xs="column" layout-align="center center" layout-margin layout-wrap>
+        <tri-widget class="img-size" flex-xs="100" flex-sm="40" flex-md="40" flex-lg="20" flex-xl="20" palette-background="white" ng-repeat="product in createdProducts">
+            <img class="pointer img-size" ng-src="{{product.product}}" ng-click="productModal($event); showProduct($index)"/>
         </tri-widget>
     </div>
 </div>
