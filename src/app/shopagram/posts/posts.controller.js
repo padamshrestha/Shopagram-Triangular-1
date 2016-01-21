@@ -6,7 +6,7 @@
         .controller('PostsController', PostsController);
 
     /* @ngInject */
-    function PostsController($scope, AuthService, postsResolve, $mdDialog, $mdMedia) {
+    function PostsController($scope, AuthService, postsResolve, $mdDialog, $mdMedia, $mdToast) {
         var vm = this;
         
         AuthService.getAuthedUser().then(function(data) {
@@ -21,6 +21,18 @@
             console.log($scope.posts[index].image);
             $scope.imageURL = $scope.posts[index].image;
         };
+        
+        vm.productAddedToast = productAddedToast;
+        
+        function productAddedToast($event, position) {
+            var $button = angular.element($event.currentTarget);
+            $mdToast.show({
+                template: '<md-toast><span flex>Profile Updated!</span></md-toast>',
+                position: position,
+                hideDelay: 3000,
+                parent: $button.parent()
+            });
+        }
         
         $scope.sayLink = function(url) {
             if (!/^https?:\/\//i.test(url)) {

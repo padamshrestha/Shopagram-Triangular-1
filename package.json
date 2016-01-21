@@ -5,6 +5,7 @@
   "devDependencies": {
     "browser-sync": "~2.10.1",
     "chalk": "~1.1.1",
+    "connect-modrewrite": "^0.8.5",
     "del": "~2.2.0",
     "eslint": "^1.10.3",
     "eslint-plugin-angular": "^0.15.0",
