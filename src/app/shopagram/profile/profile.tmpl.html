@@ -1,6 +1,6 @@
 <div class="full-image-background mb-bg-01 padding-20 padding-top-200 overlay-gradient-30" layout="row" layout-align="start center">
     <div class="margin-right-20">
-        <img ng-src="{{vm.authedUser.instagram.profile_picture}}" alt="girl-avatar" class="make-round" width="100"/>
+        <img ng-src="{{vm.profileImg || vm.defaultImg}}" alt="girl-avatar" class="make-round" width="100"/>
     </div>
     <div class="text-light">
         <h3 class="font-weight-600 margin-bottom-0 text-light text-uppercase">{{vm.authedUser.instagram.username}} / Profile</h3>
@@ -47,7 +47,7 @@
                             <textarea id="bio" label="bio" name="bio" ng-model="vm.profile.bio"/>
                         </md-input-container>
 
-                        <md-button ng-click="vm.updateUserProfile()" class="md-raised md-primary margin-left-0" ng-disabled="profile.$invalid" translate="PROFILE.BUTTON"></md-button>
+                        <md-button ng-click="vm.updateUserProfile(); vm.profileSaved($event, 'bottom right')" class="md-raised md-primary margin-left-0" ng-disabled="profile.$invalid" translate="PROFILE.BUTTON"></md-button>
                     </form>
                 </md-content>
             </md-tab>

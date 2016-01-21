@@ -41,6 +41,6 @@
         "PASSWORD_CONFIRM": {
             "LABEL": "confirm password"
         },
-        "BUTTON": "Update Settings"
+        "BUTTON": "Update Profile"
     }
 }

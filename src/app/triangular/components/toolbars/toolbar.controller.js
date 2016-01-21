@@ -26,8 +26,7 @@
         
          AuthService.getAuthedUser().then(function(data) {
             vm.authedUser = data.user;
-            vm.profileImg = vm.authedUser.instagram.profile_picture || vm.defaultImg;
-            console.log("This is the authedUser ", vm.authedUser);
+            vm.profileImg = vm.authedUser.instagram.profile_picture;
         });
 
         function openSideNav(navID) {

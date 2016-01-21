@@ -6,14 +6,27 @@
         .controller('ProfileController', ProfileController);
 
     /* @ngInject */
-    function ProfileController(AuthService) {
+    function ProfileController(AuthService, $mdToast) {
         var vm = this;
+        
+        vm.profileSaved = profileSaved;
+        
+        function profileSaved($event, position) {
+            var $button = angular.element($event.currentTarget);
+            $mdToast.show({
+                template: '<md-toast><span flex>Profile Updated!</span></md-toast>',
+                position: position,
+                hideDelay: 3000,
+                parent: $button.parent()
+            });
+        }
+        
+        vm.defaultImg = "../assets/images/avatars/avatar-5.png";
         
         AuthService.getAuthedUser().then(function(data) {
             vm.authedUser = data.user;
-            console.log("This is the authedUser ", vm.authedUser);
             vm.profile = vm.authedUser.profile;
-            console.log("this is the profile", vm.profile);
+            vm.profileImg = vm.authedUser.instagram.profile_picture;
         });
         
         vm.sayLink = function(url) {

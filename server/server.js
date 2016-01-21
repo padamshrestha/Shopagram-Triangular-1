@@ -137,9 +137,9 @@ apiRoutes.post('/authenticate', function(req, res) {
 
 app.use('/api', apiRoutes);
 
-app.all('/*', function (req, res, next) {
-   res.sendFile('index.html', { root: __dirname + '../src' });
-});
+// app.all('/*', function (req, res, next) {
+//    res.sendFile('index.html', { root: __dirname + '../src' });
+// });
 
 // Start the server
 app.listen(port);
