@@ -34,11 +34,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// demo Route (GET http://localhost:8080)
-// app.get('/', function(req, res) {
-//   res.send('Hello! The API is at http://localhost:' + port + '/api');
-// });
-
 mongoose.connect(config.database);
 
 function saveToken(req, res, next) {
