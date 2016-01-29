@@ -22,7 +22,8 @@ app.use(cors());
 
 // log to console
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, '../src')));
+// app.use(express.static(path.join(__dirname, '../src'))); //For local server
+app.use(express.static(path.join(__dirname, '../dist'))); //For Production 
 
 //Required For Passport
 app.use(session({
